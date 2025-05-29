@@ -6,15 +6,16 @@ import java.util.List;
 import com.bdfatecdiego.model.Data;
 import com.bdfatecdiego.model.Endereco;
 import com.bdfatecdiego.model.SeguroVida;
+import com.bdfatecdiego.utilitarios.GeradorApolice;
 
 public class SeguroVidaService {
 
     private ArrayList<SeguroVida> segurosVida = new ArrayList<>();
 
     // Criar e adicionar na lista
-    public SeguroVida criarSeguroVida(int numApolice, String nome, Endereco endereco, float valor,float premio, Data dataNasc, String beneficiario){
+    public SeguroVida criarSeguroVida(String nome, Endereco endereco, float valor,float premio, Data dataNasc, String beneficiario){
         SeguroVida seguroVida = new SeguroVida();
-        seguroVida.setNumApolice(numApolice);
+        seguroVida.setNumApolice(GeradorApolice.gerarNumero());
         seguroVida.setNome(nome);
         seguroVida.setEndereco(endereco);
         seguroVida.setValor(valor);

@@ -5,15 +5,16 @@ import java.util.List;
 
 import com.bdfatecdiego.model.Endereco;
 import com.bdfatecdiego.model.SeguroAuto;
+import com.bdfatecdiego.utilitarios.GeradorApolice;;
 
 public class SeguroAutomovelService {
     
     private ArrayList<SeguroAuto> segurosAuto = new ArrayList<>();
 
     // Criar e adicionar na lista
-    public SeguroAuto criarSeguroAuto(int numApolice, String nome, Endereco endereco, float valor,float premio, int deducaoAutomovel, int numLicenca, String estado, String modelo, int ano) {
+    public SeguroAuto criarSeguroAuto(String nome, Endereco endereco, float valor,float premio, int deducaoAutomovel, int numLicenca, String estado, String modelo, int ano) {
         SeguroAuto seguroAuto = new SeguroAuto();
-        seguroAuto.setNumApolice(numApolice);
+        seguroAuto.setNumApolice(GeradorApolice.gerarNumero());
         seguroAuto.setNome(nome);
         seguroAuto.setEndereco(endereco);
         seguroAuto.setValor(valor);
