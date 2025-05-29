@@ -48,4 +48,6 @@ public abstract class Seguro {
     public float getPremio() {
         return premio;
     };
+
+    public abstract String imprimirSeguro();
 }

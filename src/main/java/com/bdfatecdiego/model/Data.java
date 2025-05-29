@@ -30,4 +30,8 @@ public class Data {
     public int getAno () {
         return ano;
     };
+
+    public String imprimirData() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

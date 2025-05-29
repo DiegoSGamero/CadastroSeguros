@@ -39,4 +39,8 @@ public class Endereco {
     public String getCep() {
         return cep;
     }
+
+    public String imprimirEndereco() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

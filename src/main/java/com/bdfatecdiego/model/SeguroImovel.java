@@ -19,4 +19,9 @@ public class SeguroImovel extends Seguro {
     public int getAnoConstrucao () {
         return anoConstrucao;
     };
+
+    @Override
+    public String imprimirSeguro() {
+        return "Seguro de Imóvel - Dedução: " + deducaoCasa + ", Ano de Construção: " + anoConstrucao;
+    }
 }

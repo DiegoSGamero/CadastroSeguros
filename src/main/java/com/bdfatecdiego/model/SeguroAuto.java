@@ -46,4 +46,9 @@ public class SeguroAuto extends Seguro {
     public void setAno(int ano) {
         this.ano = ano;
     };
+
+    @Override
+    public String imprimirSeguro() {
+        return "Seguro Auto - Modelo: " + modelo + ", Ano: " + ano;
+    }
 }

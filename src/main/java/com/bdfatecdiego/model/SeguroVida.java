@@ -19,4 +19,9 @@ public class SeguroVida extends Seguro {
     public String getBeneficiaro () {
         return beneficiario;
     };
+
+    @Override
+    public String imprimirSeguro() {
+        return "Seguro de Vida - Beneficiario: " + beneficiario + ", Data de Nascimento: " + dataNasc;
+    }
 }
