@@ -1,4 +1,4 @@
-# Aplicação de Cadastro de Seguros
+# Cadastro de Seguros em Lista
 
 Este projeto é uma aplicação em Java mvn para cadastro de seguros de vida, imóveis e automóveis. Exercício da disciplina **Linguagem de Programação 2 - Banco de Dados - FATEC** para reforçar o conceito de herança em abstração.
 
