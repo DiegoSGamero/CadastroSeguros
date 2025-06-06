@@ -4,6 +4,14 @@ public class SeguroImovel extends Seguro {
     private int deducaoCasa;
     private int anoConstrucao;
 
+    public SeguroImovel() {};
+
+    public SeguroImovel(int numApolice, String nome, Endereco endereco, int deducaoCasa, int anoConstrucao) {
+        super (numApolice, nome, endereco, 150f, 0.02f);
+        this.deducaoCasa = deducaoCasa;
+        this.anoConstrucao = anoConstrucao;
+    };
+
     public void setDeducaoCasa (int deducaoCasa) {
         this.deducaoCasa = deducaoCasa;
     };

@@ -9,12 +9,12 @@ import com.bdfatecdiego.utilitarios.GeradorApolice;
 
 public class SeguroImovelService {
 
-    private ArrayList<SeguroImovel> segurosImovel = new ArrayList<>();
+    private final ArrayList<SeguroImovel> segurosImovel = new ArrayList<>();
 
     // Criar e adicionar na lista
     public SeguroImovel criarSeguroImovel(String nome, Endereco endereco, float valor,float premio,int deducaoCasa, int anoConstrucao){
         SeguroImovel seguroImovel = new SeguroImovel();
-        seguroImovel.setNumApolice(GeradorApolice.gerarNumero());
+        seguroImovel.setNumApolice(GeradorApolice.gerarApolice());
         seguroImovel.setNome(nome);
         seguroImovel.setEndereco(endereco);
         seguroImovel.setValor(valor);

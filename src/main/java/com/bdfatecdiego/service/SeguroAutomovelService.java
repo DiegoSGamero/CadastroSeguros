@@ -9,16 +9,16 @@ import com.bdfatecdiego.utilitarios.GeradorApolice;;
 
 public class SeguroAutomovelService {
     
-    private ArrayList<SeguroAuto> segurosAuto = new ArrayList<>();
+    private final ArrayList<SeguroAuto> segurosAuto = new ArrayList<>();
 
     // Criar e adicionar na lista
-    public SeguroAuto criarSeguroAuto(String nome, Endereco endereco, float valor,float premio, int deducaoAutomovel, int numLicenca, String estado, String modelo, int ano) {
+    public SeguroAuto criarSeguroAuto(String nome, Endereco endereco, int deducaoAutomovel, int numLicenca, String estado, String modelo, int ano) {
         SeguroAuto seguroAuto = new SeguroAuto();
-        seguroAuto.setNumApolice(GeradorApolice.gerarNumero());
+        seguroAuto.setNumApolice(GeradorApolice.gerarApolice());
         seguroAuto.setNome(nome);
         seguroAuto.setEndereco(endereco);
-        seguroAuto.setValor(valor);
-        seguroAuto.setPremio(premio);
+        // seguroAuto.setValor(valor);
+        // seguroAuto.setPremio(premio);
         seguroAuto.setDeducaoAutomovel(deducaoAutomovel);
         seguroAuto.setNumLicenca(numLicenca);
         seguroAuto.setEstado(estado);
@@ -26,7 +26,9 @@ public class SeguroAutomovelService {
         seguroAuto.setAno(ano);
 
         segurosAuto.add(seguroAuto);
+        System.out.println("Seguros cadastrados: " + segurosAuto.size());
         return seguroAuto;
+        
     };
 
     // Listar
@@ -48,4 +50,5 @@ public class SeguroAutomovelService {
     public boolean excluirPorNumApolice(int numApolice) {
         return segurosAuto.removeIf(seguro -> seguro.getNumApolice() == numApolice);
     };
+
 }

@@ -5,7 +5,7 @@ public class Data {
     private int mes;
     private int ano;
 
-    public void Data(){};
+    public Data(){};
 
     public void setDia(int dia) {
         this.dia = dia;
@@ -32,6 +32,6 @@ public class Data {
     };
 
     public String imprimirData() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return dia + "/" + mes + "/" + ano;
     }
 }

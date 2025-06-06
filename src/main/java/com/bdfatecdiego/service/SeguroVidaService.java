@@ -10,12 +10,12 @@ import com.bdfatecdiego.utilitarios.GeradorApolice;
 
 public class SeguroVidaService {
 
-    private ArrayList<SeguroVida> segurosVida = new ArrayList<>();
+    private final ArrayList<SeguroVida> segurosVida = new ArrayList<>();
 
     // Criar e adicionar na lista
     public SeguroVida criarSeguroVida(String nome, Endereco endereco, float valor,float premio, Data dataNasc, String beneficiario){
         SeguroVida seguroVida = new SeguroVida();
-        seguroVida.setNumApolice(GeradorApolice.gerarNumero());
+        seguroVida.setNumApolice(GeradorApolice.gerarApolice());
         seguroVida.setNome(nome);
         seguroVida.setEndereco(endereco);
         seguroVida.setValor(valor);

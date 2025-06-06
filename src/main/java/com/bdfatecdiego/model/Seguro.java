@@ -1,14 +1,24 @@
 package com.bdfatecdiego.model;
 
+import com.bdfatecdiego.utilitarios.GeradorApolice;
+
 public abstract class Seguro {
     
-    private int numApolice; // id
-    private String nome;
-    private Endereco endereco;
-    private float valor;
-    private float premio;
+    protected int numApolice; // id
+    protected String nome;
+    protected Endereco endereco;
+    protected float valor;
+    protected float premio;
 
-    public void Seguro() {};
+    public Seguro() {};
+
+    public Seguro(int numApolice, String nome, Endereco endereco, float valor, float premio) {
+        this.numApolice = GeradorApolice.gerarApolice();
+        this.nome= nome;
+        this.endereco = endereco;
+        this.valor = valor;
+        this.premio = premio;
+    };
 
     public void setNumApolice(int numApolice) {
         this.numApolice = numApolice;
@@ -39,7 +49,7 @@ public abstract class Seguro {
     };
 
     public float getValor() {
-        return numApolice;
+        return valor;
     };
 
     public void setPremio(float premio) {

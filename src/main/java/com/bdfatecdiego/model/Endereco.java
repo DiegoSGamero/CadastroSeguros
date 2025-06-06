@@ -1,20 +1,17 @@
 package com.bdfatecdiego.model;
 
 public class Endereco {
-    private String enderecoCompleto;
     private String estado;
     private String cidade;
     private String cep;
 
-    public void Endereco() {};
-
-    public void setEnderecoCompleto(String estado, String cidade, String cep) {
-        this.enderecoCompleto = cidade + ", " + estado + "-" + cep;
-    }
-
-    public String getEnderecoCompleto() {
-        return enderecoCompleto;
-    }
+    public Endereco() {};
+    
+    public Endereco(String estado, String cidade, String cep) {
+        this.estado = estado;
+        this.cidade = cidade;
+        this.cep = cep;
+    };
 
     public void setEstado(String estado) {
         this.estado = estado;
@@ -40,7 +37,12 @@ public class Endereco {
         return cep;
     }
 
+    public void endCompleto(String cidade, String estado, String cep) {
+        String endCompleto;
+        endCompleto = cidade + ", " + estado + " - " + cep;
+    }
+
     public String imprimirEndereco() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cidade + ", " + estado + " - " + cep;
     }
 }

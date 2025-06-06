@@ -7,7 +7,18 @@ public class SeguroAuto extends Seguro {
     private String modelo;
     private int ano;
 
-     public int getDeducaoAutomovel() {
+    public SeguroAuto() {};
+
+    public SeguroAuto(int numApolice, String nome, Endereco endereco, int deducaoAutomovel, int numLicenca, String estado, String modelo, int ano) {
+        super (numApolice, nome, endereco, 200f, 0.01f);
+        this.deducaoAutomovel = deducaoAutomovel;
+        this.numLicenca = numLicenca;
+        this.estado = estado;
+        this.modelo = modelo;
+        this.ano = ano;
+    };
+
+    public int getDeducaoAutomovel() {
         return deducaoAutomovel;
     };
 
@@ -50,5 +61,19 @@ public class SeguroAuto extends Seguro {
     @Override
     public String imprimirSeguro() {
         return "Seguro Auto - Modelo: " + modelo + ", Ano: " + ano;
+    };
+
+    @Override
+    public String toString() {
+        return "SeguroAuto{" +
+                "numApolice=" + numApolice +
+                ", nome='" + nome + '\'' +
+                ", endereco=" + endereco +
+                ", deducaoAutomovel=" + deducaoAutomovel +
+                ", numLicenca=" + numLicenca +
+                ", estado='" + estado + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", ano=" + ano +
+                '}';
     }
 }

@@ -2,6 +2,11 @@ package com.bdfatecdiego.app;
 
 import java.util.Scanner;
 
+import com.bdfatecdiego.model.Endereco;
+import com.bdfatecdiego.model.SeguroAuto;
+import com.bdfatecdiego.service.SeguroAutomovelService;
+import com.bdfatecdiego.utilitarios.GeradorApolice;
+
 public class mainApp {
 
     public static void main(String[] args) {
@@ -30,7 +35,34 @@ public class mainApp {
                     break;
                 case "auto":
                     System.out.println("Cadastro de seguro de automóvel");
-
+                    int numApolice = GeradorApolice.gerarApolice();
+                    System.out.println("Nome: ");
+                    String nome = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Cidade: ");
+                    String cidade = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Estado: ");
+                    String estado = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Cep: ");
+                    String cep = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Deducao estimada: ");
+                    String deducao = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Numero da licença: ");
+                    String licenca = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Carro zero ou usado? ");
+                    String estadoAuto = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Modelo: ");
+                    String modelo = scanner.nextLine().trim().toLowerCase();
+                    System.out.println("Ano: ");
+                    String ano = scanner.nextLine().trim().toLowerCase();
+                    Endereco endAuto = new Endereco(cidade, estado, cep);
+                    int deducaoAuto = Integer.parseInt(deducao);
+                    int numLicenca = Integer.parseInt(licenca);
+                    int anoAuto = Integer.parseInt(ano);
+                    SeguroAutomovelService autoService = new SeguroAutomovelService();
+                    SeguroAuto novoSeguro = autoService.criarSeguroAuto(nome, endAuto, deducaoAuto, numLicenca, estadoAuto, modelo, anoAuto);
+                    System.out.println("Seguro criado com sucesso:");
+                    System.out.println(novoSeguro.toString());
+                    // System.out.println(segurosAuto.size());
                     break;
                 default:
                     System.out.println("Entrada inválida. Encerrando o programa.");
